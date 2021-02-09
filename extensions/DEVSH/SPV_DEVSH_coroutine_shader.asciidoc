@@ -1,0 +1,139 @@
+SPV_DEVSH_coroutine_shader
+===================
+
+Name Strings
+------------
+
+SPV_DEVSH_coroutine_shader
+
+Contact
+-------
+
+See *Issues* list in the Khronos SPIRV-Registry repository:
+https://github.com/KhronosGroup/SPIRV-Registry
+
+Contributors
+------------
+
+- Mateusz Kielan, Devsh Graphics Programming
+- Krzysztof Szenk, Devsh Graphics Programming
+- Legend, Where?
+
+Status
+------
+
+- Draft
+
+Version
+-------
+
+[width="40%",cols="25,25"]
+|========================================
+| Last Modified Date | 2020-10-01
+| Revision           | 21
+|========================================
+
+Dependencies
+------------
+
+This extension is written against the SPIR-V Specification,
+Version 1.5 Revision 1. (TODO: double check)
+
+This extension requires SPIR-V 1.5.
+
+Overview
+--------
+
+This extension adds new functionality to support the Vulkan
+VK_DEVSH_coroutine_shader extension in SPIR-V.
+
+Extension Name
+--------------
+
+To use this extension within a SPIR-V module, the following
+*OpExtension* must be present in the module:
+
+----
+OpExtension "SPV_DEVSH_coroutine_shader"
+----
+
+New Execution Models
+--------------------
+
+This extension introduces new execution models:
+
+----
+CoroutineDEVSH
+----
+
+these depend on the *VK_LAYER_DEVSH_coroutine_shader* layer being loaded.
+
+
+New Storage Classes
+-------------------
+
+Storage classes added under the *VK_LAYER_DEVSH_coroutine_shader* layer
+
+----
+StackDataPtrDEVSH
+----
+
+New Builtins
+------------
+
+Builtins added under the *VK_LAYER_DEVSH_coroutine_shader* layer
+
+----
+VirtualInvocationIdDEVSH
+InvocationsLaunchedDEVSH
+InvocationsEnqueuedDEVSH
+InvocationsFinishedDEVSH
+----
+
+New Instructions
+----------------
+
+Instructions added under the *VK_LAYER_DEVSH_coroutine_shader* layer
+
+----
+OpEnqueueCoroutineDEVSH
+OpAwaitCoroutineDEVSH
+OpContinueWithCoroutineDEVSH
+----
+
+Modifications to the SPIR-V Specification
+-----------------------------------------
+
+TODO
+
+Validation Rules
+----------------
+
+An OpExtension must be added to the SPIR-V for validation layers to check
+legal use of this extension:
+
+----
+OpExtension "SPV_DEVSH_coroutine_shader"
+----
+
+Issues
+------
+
+1) Some Question?
+
+Discussion: Some background.
+
+Resolved: Some Answer
+
+
+Revision History
+----------------
+
+[cols="5,15,15,70"]
+[grid="rows"]
+[options="header"]
+|========================================
+|Rev|Date|Author|Changes
+|1 |2021-0X-XX |Mateusz Kielan           | Initial version
+|========================================
+
